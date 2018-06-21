@@ -1,4 +1,4 @@
-var PORT = 6001;
+var PORT = 6000;
 var HOST = '159.89.206.210';
 
 var dgram = require('dgram');

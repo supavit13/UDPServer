@@ -1,0 +1,17 @@
+AT      // First handshake will be used for out speed detection may be result in ERROR
+AT      // Repeat sending "AT" until you receive an "OK"
+AT+NRB  // Reboot the device in order to have a clean start
+
+//wait for the reboot
+
+AT+NBAND=8                        // Set the communication band in this case 900Mhz
+AT+CGDCONT=1,"IP","NBIOT.Telekom" // Sets the APN (Access Point Name)
+AT+CEREG=2                        // Connect to the IoT Core
+AT+CFUN=1                         // Power on the module
+AT+COPS=1,2,"12345"               // Force the module to connect to the network
+
+// wait for the network connection (some seconds)
+
+AT+NPING=8.8.8.8                          // Ping a server to check if it works
+AT+NSOCR=DGRAM,17,16666                   // Open a UDP socket
+AT+NSOST=0,ansi.23-5.eu,16666,4,414E5349  // Send out the data

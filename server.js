@@ -1,11 +1,13 @@
-var PORT = 3000;
-var HOST = '0.0.0.0';
+var PORT = 6001;
+var HOST = '158.108.130.130';
 
 var dgram = require('dgram');
 var moment = require('moment-timezone');
 var server = dgram.createSocket('udp4');
 var mqtt = require('mqtt');
+var event = require('events');
 
+event.EventEmitter.prototype._maxListeners = 100;
 var options = {
     port: 12829,
     host: "m11.cloudmqtt.com",

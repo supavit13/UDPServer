@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "dgram": "^1.0.1",
+    "events": "^3.0.0",
     "moment-timezone": "^0.5.20",
     "mqtt": "^2.18.1"
   },

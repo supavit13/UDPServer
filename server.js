@@ -26,7 +26,7 @@ server.on('message', function (message, remote) {
     var now = moment()
     var formatted = now.format('YYYY-MM-DD HH:mm:ss')
     if(message!=null){
-        console.log(message['flight']);
+        console.log("massage income");
     }
     client.publish('node2', message)
     console.log("publish successfully")

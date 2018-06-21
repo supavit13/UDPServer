@@ -26,13 +26,14 @@ server.on('message', function (message, remote) {
     var now = moment()
     var formatted = now.format('YYYY-MM-DD HH:mm:ss')
     if(message!=null){
-        console.log(message.flight);
+        console.log(message['flight']);
     }
+    client.publish('node2', message)
+    console.log("publish successfully")
     // console.log(remote.address + ':' + remote.port +' - ' + message + ' time : '+formatted);
-    client.on('connect', function () {
-        client.publish('node2', message)
-        console.log("publish successfully")
-    });
+    // client.on('connect', function () {
+        
+    // });
 
 });
 

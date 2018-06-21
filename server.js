@@ -1,5 +1,5 @@
 var PORT = 6001;
-var HOST = '158.108.130.130';
+var HOST = '159.89.206.210';
 
 var dgram = require('dgram');
 var moment = require('moment-timezone');

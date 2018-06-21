@@ -26,7 +26,7 @@ server.on('message', function (message, remote) {
     var now = moment()
     var formatted = now.format('YYYY-MM-DD HH:mm:ss')
     if(message!=null){
-        console.log("message avaliable");
+        console.log(message.flight);
     }
     // console.log(remote.address + ':' + remote.port +' - ' + message + ' time : '+formatted);
     client.on('connect', function () {
